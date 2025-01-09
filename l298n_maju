@@ -1,0 +1,32 @@
+// Pendefinisian pin motor pada L298N
+#define MOTOR_1_PIN_1    14  // Motor 1 (Input 1)
+#define MOTOR_1_PIN_2    15  // Motor 1 (Input 2)
+#define MOTOR_2_PIN_1    13  // Motor 2 (Input 3)
+#define MOTOR_2_PIN_2    12  // Motor 2 (Input 4)
+
+void setup() {
+  // Inisialisasi pin sebagai output
+  pinMode(MOTOR_1_PIN_1, OUTPUT);
+  pinMode(MOTOR_1_PIN_2, OUTPUT);
+  pinMode(MOTOR_2_PIN_1, OUTPUT);
+  pinMode(MOTOR_2_PIN_2, OUTPUT);
+
+  // Memulai komunikasi serial
+  Serial.begin(115200);
+  Serial.println("ESP32-CAM Motor Control Initialized!");
+}
+
+void loop() {
+  // Maju selama 3 detik
+  maju();
+}
+
+// Fungsi untuk menggerakkan motor maju
+void maju() {
+  Serial.println("Motor maju...");
+  digitalWrite(MOTOR_1_PIN_1, HIGH);
+  digitalWrite(MOTOR_1_PIN_2, LOW);
+  digitalWrite(MOTOR_2_PIN_1, HIGH);
+  digitalWrite(MOTOR_2_PIN_2, LOW);
+}
+

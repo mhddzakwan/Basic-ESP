@@ -1,32 +1,61 @@
 // Pendefinisian pin motor pada L298N
-#define MOTOR_1_PIN_1    14  // Motor 1 (Input 1)
-#define MOTOR_1_PIN_2    15  // Motor 1 (Input 2)
-#define MOTOR_2_PIN_1    13  // Motor 2 (Input 3)
-#define MOTOR_2_PIN_2    12  // Motor 2 (Input 4)
+#define IN1    14  // Motor 1 kiri (Input 1)
+#define IN2    15  // Motor 1 kiri (Input 2) 
+#define IN3    13  // Motor 2 kanan (Input 3) 
+#define IN4    12  // Motor 2 kanan (Input 4)
 
 void setup() {
   // Inisialisasi pin sebagai output
-  pinMode(MOTOR_1_PIN_1, OUTPUT);
-  pinMode(MOTOR_1_PIN_2, OUTPUT);
-  pinMode(MOTOR_2_PIN_1, OUTPUT);
-  pinMode(MOTOR_2_PIN_2, OUTPUT);
+  pinMode(IN1, OUTPUT);
+  pinMode(IN2, OUTPUT);
+  pinMode(IN3, OUTPUT);
+  pinMode(IN4, OUTPUT);
 
   // Memulai komunikasi serial
-  Serial.begin(115200);
+  Serial.begin(9600);
   Serial.println("ESP32-CAM Motor Control Initialized!");
 }
 
 void loop() {
-  // Maju selama 3 detik
   maju();
 }
 
-// Fungsi untuk menggerakkan motor maju
+// Fungsi untuk menggerakkan motor 
+
 void maju() {
   Serial.println("Motor maju...");
-  digitalWrite(MOTOR_1_PIN_1, HIGH);
-  digitalWrite(MOTOR_1_PIN_2, LOW);
-  digitalWrite(MOTOR_2_PIN_1, HIGH);
-  digitalWrite(MOTOR_2_PIN_2, LOW);
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
 }
+// Block kode, lalu Ctrl + / untuk menghilangkan komentar
+
+// void mundur(){
+//   Serial.println("Motor mundur...");
+//   digitalWrite(IN1, );
+//   digitalWrite(IN2, );
+
+//   digitalWrite(IN3, );
+//   digitalWrite(IN4, );
+// }
+
+// void kiri(){
+//   Serial.println("Motor kiri...");
+//   digitalWrite(IN1, );
+//   digitalWrite(IN2, );
+
+//   digitalWrite(IN3, );
+//   digitalWrite(IN4, );
+// }
+
+// void kanan(){
+//   Serial.println("Motor kanan...");
+//   digitalWrite(IN1, );
+//   digitalWrite(IN2, );
+
+//   digitalWrite(IN3, );
+//   digitalWrite(IN4, );
+// }
 

@@ -41,6 +41,15 @@ void maju() {
 //   digitalWrite(IN4, );
 // }
 
+// void diam(){
+//   Serial.println("Motor diam...");
+//   digitalWrite(IN1, );
+//   digitalWrite(IN2, );
+
+//   digitalWrite(IN3, );
+//   digitalWrite(IN4, );
+// }
+
 // void kiri(){
 //   Serial.println("Motor kiri...");
 //   digitalWrite(IN1, );

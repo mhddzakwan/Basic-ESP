@@ -50,6 +50,8 @@ void loop() {
 // Fungsi untuk menangani halaman utama
 void handleRoot() {
   String html = "<h1>ESP32-CAM LED Control</h1>";
+  html = "(Nama)";
+  html = "(Kelas)";
   html += "<p><a href='/led/on'><button>Turn ON LED</button></a></p>";
   html += "<p><a href='/led/off'><button>Turn OFF LED</button></a></p>";
   server.send(200, "text/html", html);
